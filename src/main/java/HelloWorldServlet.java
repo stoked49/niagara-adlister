@@ -6,8 +6,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "HellowWorldServlet", urlPatterns = {"/hello"})
+@WebServlet(name = "HellowWorldServlet", urlPatterns = "")
 public class HelloWorldServlet extends HttpServlet {
+    private int counter = 0;
     protected void doGet(
             HttpServletRequest req,
             HttpServletResponse res
@@ -23,6 +24,7 @@ public class HelloWorldServlet extends HttpServlet {
         } else {
             writer.println("<h1>Hello World</h1>");
         }
-
+        counter += 1;
+        res.getWriter().println("<h1>The count is " + counter + "</h1>");
     }
 }
