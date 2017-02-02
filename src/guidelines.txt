@@ -1,0 +1,61 @@
+For every action in your application in your application, you'll need
+For instance **search ads**
+
+
+* a servlet (SearchAdsServlet) usually servlets have the same name as the action
+    Almost every action has two steps in a web application
+
+* Input from the user -> doGet method in the servlet
+    * require you to add a new jsp -> it's gonna be a form -> a search form -> search.jsp
+
+* output that you show to your users -> doPost method
+    * you'll get the input form th user, ALWAYS from the request -. getParameter
+    * you'll persist that new or existing information in your database
+    * you will usually create a model/bean
+    * then, we'll call our dao -> insert, delete, update, select
+        * if the method exists, use it
+        * otherwise, add it to the DAO interface, then implement it in your JDBC object
+        * usually the parameters for this new methods are the same that you got form the request
+    * you'll get a result from your dao, you'll need to pass this
+        * to a view
+            * if that view already exists, use it
+            * You'll need a new .jsp file -> use the same verb your using for the your servlet
+                - so if it's SearchAdsServlet -> ads/search.jsp
+        * to a redirect
+
+    **Databases**
+Rough order of ops
+-Create db
+-tie db into app.  is that jdbc??
+
+
+    **Version Control** (GitHub)
+
+
+    **Glossary**
+-Interface
+-Extends
+-Try/Catch
+-Statement (createStatement())
+-Connection
+-@override
+-next()
+
+TomCat:
+
+MAVEN:
+
+DAO:
+    -resultSet
+Servlet:
+    -getProperty
+    -setAttribute
+    -throws (IOException, ServletRequest)
+JSTL:
+JSP:
+Database:
+    -id
+    -SQLException
+    -RuntimeException
+    -executeQuery(sql)
+Foreign key

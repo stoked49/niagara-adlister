@@ -11,6 +11,21 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+    @Override
+    public Long insert(Ad ad) {
+        if (ads == null) {
+            ads = generateAds();
+        }
+        ad.setId((long) ads.size());
+        ads.add(ad);
+        return ad.getId();
+    }
+
+    @Override
+    public Ad find(long id) {
+        return null;
+    }
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
